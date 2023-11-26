@@ -85,7 +85,7 @@ let buttonsClicked = 0;
     document.getElementById('openModal2').addEventListener('keydown', function(e) {
         console.log(e.key);
         if (e.key === 'Enter') {
-            openModal('modal1');
+            openModal('modal2');
         }
       });
 
@@ -120,33 +120,128 @@ let buttonsClicked = 0;
     
        
     });
+
+    
     
 
-    const allButtons = document.querySelectorAll('.fixed-btn');
-    console.log(allButtons);
-    allButtons.forEach((btn, idx) =>  {
-        btn.addEventListener('click', () => {
-          console.log([...allButtons].slice(0,idx+1));
 
-          if(btn.classList.contains('active')) {
-            [...allButtons].slice(idx,allButtons.length).forEach(btn => {
-              document.querySelector('.h6').textContent = `
-                  ${ [...allButtons].slice(0,idx).length} / ${allButtons.length} Completed`;
-                  btn.classList.remove('active');
-                  progressBar.value = [...allButtons].slice(0,idx).length * 20;
-                  resetAnimation(btn)
-            })
-            } else {
-              [...allButtons].slice(0,idx+1).forEach(btn => {
-                document.querySelector('.h6').textContent = `
-                    ${ [...allButtons].slice(0,idx+1).length} / ${allButtons.length} Completed`;
-                    btn.classList.add('active');
-                    progressBar.value = [...allButtons].slice(0,idx+1).length * 20;
-                    startAnimation(btn)
-              })
-              }
-        })
-    })
+
+
+
+
+  //   const allButtons = document.querySelectorAll('.fixed-btn');
+  
+  //   allButtons.forEach((btn, idx) =>  {
+  //       btn.addEventListener('click', () => {
+          
+
+  //         if(btn.classList.contains('active')) {
+  //           [...allButtons].slice(idx,allButtons.length).forEach(btn => {
+  //             document.querySelector('.h6').textContent = `
+  //                 ${ [...allButtons].slice(0,idx).length} / ${allButtons.length} Completed`;
+  //                 btn.classList.remove('active');
+  //                 progressBar.value = [...allButtons].slice(0,idx).length * 20;
+  //                 resetAnimation(btn)
+  //           })
+  //           } else {
+  //             [...allButtons].slice(0,idx+1).forEach(btn => {
+  //               document.querySelector('.h6').textContent = `
+  //                   ${ [...allButtons].slice(0,idx+1).length} / ${allButtons.length} Completed`;
+  //                   btn.classList.add('active');
+  //                   progressBar.value = [...allButtons].slice(0,idx+1).length * 20;
+  //                   startAnimation(btn)
+  //             })
+  //             }
+  //       })
+  //   })
+
+
+
+
+
+  //       btn.addEventListener('keydown', function (e) {
+  //     if (e.key === 'Enter' || e.key === ' ') {
+  //       if(btn.classList.contains('active')) {
+  //         [...allButtons].slice(idx,allButtons.length).forEach(btn => {
+  //           document.querySelector('.h6').textContent = `
+  //               ${ [...allButtons].slice(0,idx).length} / ${allButtons.length} Completed`;
+  //               btn.classList.remove('active');
+  //               progressBar.value = [...allButtons].slice(0,idx).length * 20;
+  //               resetAnimation(btn)
+  //         })
+  //         } else {
+  //           [...allButtons].slice(0,idx+1).forEach(btn => {
+  //             document.querySelector('.h6').textContent = `
+  //                 ${ [...allButtons].slice(0,idx+1).length} / ${allButtons.length} Completed`;
+  //                 btn.classList.add('active');
+  //                 progressBar.value = [...allButtons].slice(0,idx+1).length * 20;
+  //                 startAnimation(btn)
+  //           })
+  //           }
+  //     }
+  // });
+
+
+
+
+
+
+
+
+  const allButtons = document.querySelectorAll('.fixed-btn');
+
+  allButtons.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('active')) {
+        [...allButtons].slice(idx, allButtons.length).forEach(btn => {
+          document.querySelector('.h6').textContent = `
+            ${[...allButtons].slice(0, idx).length} / ${allButtons.length} Completed`;
+          btn.classList.remove('active');
+          progressBar.value = [...allButtons].slice(0, idx).length * 20;
+          resetAnimation(btn);
+        });
+      } else {
+        [...allButtons].slice(0, idx + 1).forEach(btn => {
+          document.querySelector('.h6').textContent = `
+            ${[...allButtons].slice(0, idx + 1).length} / ${allButtons.length} Completed`;
+          btn.classList.add('active');
+          progressBar.value = [...allButtons].slice(0, idx + 1).length * 20;
+          startAnimation(btn);
+        });
+      }
+    });
+  
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (btn.classList.contains('active')) {
+          [...allButtons].slice(idx, allButtons.length).forEach(btn => {
+            document.querySelector('.h6').textContent = `
+              ${[...allButtons].slice(0, idx).length} / ${allButtons.length} Completed`;
+            btn.classList.remove('active');
+            progressBar.value = [...allButtons].slice(0, idx).length * 20;
+            resetAnimation(btn);
+          });
+        } else {
+          [...allButtons].slice(0, idx + 1).forEach(btn => {
+            document.querySelector('.h6').textContent = `
+              ${[...allButtons].slice(0, idx + 1).length} / ${allButtons.length} Completed`;
+            btn.classList.add('active');
+            progressBar.value = [...allButtons].slice(0, idx + 1).length * 20;
+            startAnimation(btn);
+          });
+        }
+      }
+    });
+  });
+  
+
+
+
+
+
+
+
+  
 
     
 
@@ -173,23 +268,33 @@ let buttonsClicked = 0;
 
 
 
-const allDropdowns = document.querySelectorAll(".dropdownGeneral");
 
-allDropdowns.forEach((dropdown) => {
-    const titledrop = dropdown.querySelector(".dropItems");
-    const items = dropdown.querySelector(".itemsdrop");
+        const allDropdowns = document.querySelectorAll(".dropdownGeneral");
 
-    titledrop.addEventListener('click', () => {
-       
-        allDropdowns.forEach((otherDropdown) => {
-            if (otherDropdown !== dropdown) {
-                otherDropdown.querySelector(".itemsdrop").classList.remove("active");
-            }
+        allDropdowns.forEach((dropdown) => {
+            const titledrop = dropdown.querySelector(".dropItems");
+            const items = dropdown.querySelector(".itemsdrop");
+        
+            titledrop.addEventListener('click', () => {
+                allDropdowns.forEach((otherDropdown) => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.querySelector(".itemsdrop").classList.remove("active");
+                    }
+                });
+        
+                items.classList.toggle("active");
+            });
+        
+            titledrop.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    allDropdowns.forEach((otherDropdown) => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.querySelector(".itemsdrop").classList.remove("active");
+                        }
+                    });
+        
+                    items.classList.toggle("active");
+                }
+            });
         });
-
-       
-        items.classList.toggle("active");
-    });
-});
-
-
+        

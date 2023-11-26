@@ -24,31 +24,85 @@ a:focus {
 }
 
 a:focus {
-    background-color: red;
+    outline-color: rgb(29, 111, 206);
+    padding: .1rem;
 }
 
 button:focus {
-    outline-color: red;
-
+    outline-color: rgb(29, 111, 206);
 }
 
 input:focus {
- outline-color: red;
+ outline-color: white;
+}
+input:hover {
+    outline-color: white;
+    border: 2px solid white;
+}
+li:focus {
+ outline-color: rgb(29, 111, 206);
+ padding: 1rem;
+}
+span:focus {
+ outline-color: rgb(29, 111, 206);
+ /* padding: 1rem; */
 }
 
+.fixed-btn:focus {
+    outline-color: rgb(29, 111, 206);
+    
+    width: 3rem;
+    height: 2rem;
 
+    
+   }
+
+   .btn2 {
+    display: none;
+   }
+   .btn2 button:hover{
+background-color:seashell;
+   }
+
+   .items:focus {
+    outline-color: rgb(29, 111, 206);
+    
+    width: 80%;
+    height: 2rem;
+    
+   }
+ 
+   .ad-btn:hover{
+    background-color: rgb(218, 211, 211);
+   }
+
+   .btn1 button:hover{
+    background-color: rgba(0, 0, 0, .8);
+   }
+  
+.dv {
+    display: none;
+}
 .headerContainer {
     background-color: #1c181d; 
     display: flex;
     /* justify-content: space-around; */
     padding: 1.4rem .7rem 1rem .7rem;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .logo {
     padding-right: .4rem;
     cursor: pointer;
+    display: block;
+    
 }
 
+#oll{
+    display: block;
+}
+#oo {
+    display: none;
+}
 .inputContainer {
     width: 100%;
     position: relative;
@@ -68,8 +122,11 @@ input {
     width: 100%;
     border-radius: 10px;
     border: .4px solid rgb(166, 166, 184);
+    color: white;
 
 }
+
+
 
 input::placeholder {
     color: whitesmoke;
@@ -80,8 +137,8 @@ input::placeholder {
 
 .profileContainer {
     display: flex;
-    justify-content: space-between;
-    margin-left: .6rem;
+    /* justify-content: space-between; */
+    /* margin-left: .6rem; */
 }
 
 .profileContainer span {
@@ -90,7 +147,7 @@ input::placeholder {
    position: relative;
 }
 
-.profile {
+.profile h4 {
     background-color: rgb(0, 255, 179) ;
    width: 2.5rem;
    height: 2.5rem;
@@ -101,45 +158,61 @@ input::placeholder {
   
 }
 
+.logodesk {
+    display: none;
+}
+
+
 
   .modal {
-    display: none;
-    background-color: red;
+    
+   
     width: 60%;
     height: 18rem;
     position: absolute;
     right: 1rem;
-    top: 6rem;
+    top: -60rem;
     z-index: 100;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
+    transition: .6s ease-in;
+    opacity: 0;
+    visibility: hidden;
   }
-
+.pr {
+    font-size: 20px;
+    font-weight: 600;
+}
   .modal-content {
    padding-left: .5rem;
   }
 
   #modal1.active {
-    display: flex;
+    top: 6rem;
     background-color:white;
     right: 1.2rem;
     width: 80%;
     height: 10rem;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
    
   }
 
   #modal1 .modal-content {
+padding-top: 1rem;
 
-    color: #f6fcfb;
   }
 
   #modal2.active {
-    display: block;
+    top: 6rem;
     background-color:white;
     right: 1rem;
     width: 80%;
-    height: 30rem;
+    height: 34rem;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    visibility: visible;
   }
 
   #modal2 .modal-content {
@@ -165,6 +238,20 @@ input::placeholder {
     padding: .1rem .8rem;
     color: #1c181d;
   }
+  li {
+    list-style: none;
+  }
+
+  .note {
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 1.2rem;
+    color: black;
+    font-size: 12px;
+  }
+
+  .abt {
+    display: flex;
+  }
 
   .noti {
     font-size: 14px;
@@ -183,6 +270,29 @@ input::placeholder {
   padding-left: 1rem;
   
   color: black;
+}
+
+
+.dc {
+    background-color: rgb(0, 255, 179) ;
+   width: 2.8rem;
+   height: 2.8rem;
+    border-radius: 10px;
+    padding-top: .6rem;
+    padding-left: .5rem;
+    cursor: pointer;
+    display: block;
+    margin-right: 1rem;
+  
+}
+.dd {
+    display: block;
+    margin-top:   1rem;
+}
+
+.davi {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 .prfdetails span {
@@ -265,7 +375,9 @@ input::placeholder {
   }
 
  
-
+  progress::-webkit-progress-value {
+    background-color: red; /* Set the progress bar color here */
+  }
 
 
 .range label  {
@@ -276,6 +388,7 @@ input::placeholder {
  .range .progress-container {
     width: 50%;
     border-radius: 10px;
+    /* background-color: red; */
    
  }
 
@@ -283,6 +396,7 @@ input::placeholder {
     display: block;
     width: 100%;
     padding: .7rem;
+    /* background-color: rebeccapurple; */
    
  }
  
@@ -293,18 +407,21 @@ input::placeholder {
 
 
 .dropdwnController   {
-    background-color: rgb(233, 241, 241);
+  
     width: 100%;
    height: 10rem;
    margin-top: 1.5rem;
    padding: .2rem 1rem;
    overflow: hidden;
    transition: .5s ease-in-out;
+   background-color: white;
+   border-radius: 15px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
  }
 
  .dropdwnController.open {
   
-   height: 36rem;
+   height: 45rem;
    
  }
 
@@ -313,26 +430,25 @@ input::placeholder {
     /* background-color: red; */
     height: 10rem;
     width: 100%;
-    /* background-color: blue; */
+  
 }
+
+
 .dropdwnController h4,p,span {
    margin: .5rem 0;
 
 } 
 
-.dropdownGeneral {
-    /* background-color: rgba(0, 0, 0,0.09); */
-    /* padding-bottom: 1.4rem; */
-    /* border-radius: 10px; */
+img {
+    display: none;
 }
 
 .dropdownContent  {
-    /* background-color: rgb(168, 26, 204); */
+    
     width: 100%;
    height: 3rem;
     margin-top: .5rem;
     display: flex;
-    
  
 }
 
@@ -358,6 +474,12 @@ input::placeholder {
     display: block;
     animation: slideDown 0.6s ease-in-out; 
     opacity: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+    margin-top: .8rem;
+    border-radius: 10px;
+   
+     transform: translateY(-20px);
 }
 
 
@@ -382,6 +504,14 @@ input::placeholder {
     border-style: dotted;
     margin-right: 1rem;
     cursor: pointer;
+    transition: .4s ease-in-out;
+    
+   }
+   .itemBtn:hover{
+    
+    border-style: solid;
+    border:  solid rgba(0, 0, 0, 0.8);
+    
    }
 
    .itemimg{
@@ -433,6 +563,19 @@ height: 2.9rem;
 color: #F6F3F6;
 margin-bottom: 1rem;
    }
+   .btn2 button {
+padding: 1rem 12px;
+background: #ddd8d8;
+border-width: 1.5px 1.5px 0px 1.5px;
+/* border-style: solid; */
+/* border-color: rgba(255, 255, 255, 0.2); */
+box-shadow: 0px 2px 0px #000000, 0px 1px 0px 1.5px #333333, 0px 0px 0px 1.5px #333333;
+border-radius: 6px;
+width: 10rem;
+height: 2.9rem;
+color:black;
+margin-bottom: 1rem;
+   }
 
 
 
@@ -477,4 +620,594 @@ margin-bottom: 1rem;
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    body {
+      
+    overflow-x: hidden;    
+    }
+    
+    .control {
+        padding: 0 1rem;
+    
+    }
+    
+    
+    
+    main {
+       
+    }
+    .headerContainer {
+        background-color: #1c181d; 
+        display: flex;
+        /* padding: 1rem 5rem; */
+        /* justify-content: space-between */
+        
+       ;
+    }
+    
+    .headerContainer a {
+        display: block;
+    }
+    
+    
+    
+    
+    .logodesk {
+        display: block;
+        cursor: pointer;
+    }
+    .logo-con{
+        width: 60%;
+    }
+    
+    .logo {
+        display: none;
+    }
+    .inputContainer{
+        /* margin: 0 12rem; */
+        padding-right: 10rem;
+    }
+    input {
+        width: 80%;
+       
+    }
+    .profileContainer {
+        width: 30%;
+     
+        /* display: flex; */
+    }
+    
+    .profile {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.2);
+       
+       
+        width: 69%;
+        height: 2.5rem;
+         border-radius: 10px;
+         padding-left: .4rem;
+         
+        }
+    
+        .dv {
+            font-size: 11px;
+            padding-top: .2rem;
+        
+        color: white;
+        display: block;
+        margin-right: .08rem;
+        /* padding: .4rem; */
+    }
+    
+    .notify{
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    
+    }
+    
+    
+    
+    .modal {
+        
+       
+        
+        right: -20rem;
+        top: 6rem;
+        z-index: 100;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
+        transition: .6s ease-in;
+        opacity: 0;
+        visibility: hidden;
+      }
+    
+    #modal1.active {
+        top: 6rem;
+        right: 1rem;
+        
+        width: 30%;
+       
+      }
+    
+    #modal2.active {
+        top: 6rem;
+        right: 1rem;
+        width: 30%;
+       
+      }
+    
+    #modal2.active {
+        top: 6rem;
+        
+        width: 30%;
+       
+      }
+    
+    .ad-modal{
+        border-radius: 10px;
+    }
+    .adController {
+        display: flex;
+        justify-content: space-between;
+       
+    }
+    .adController  button {
+        /* color: whitesmoke; */
+        width: 20%;
+        padding: .6rem .2rem;
+        /* outline: none; */
+        border-radius: 8px;
+        margin-right: 4rem;
+        border-radius: 15px;
+    
+    }
+    
+    
+    .ad-closebtn  {
+        position: absolute;
+        /* background-color: red;  */
+        top: .9rem;
+        right: .7rem;
+    }
+    
+    .desc {
+        display: flex;
+        justify-content: space-between;
+      }
+    
+    .range progress {
+        display: block;
+        width: 50%;
+        padding: .7rem;
+       
+     }
+    
+     .btn2 {
+        display:  block;
+       }
+    
+     .itemsdrop p {
+       width: 70%;
+    
+       }
+     itemimg{
+        width: 400px;
+        height: 200px;
+        display: block;
+       }
+    
+    
+       .itemimgControl {
+        display: flex;
+        justify-content: space-between;
+       }
+    .Gbtn {
+        display: flex;
+    }
+    
+       img {
+        display: block;
+       }
+    
+    
+    }
+
+
+@media only screen and (min-width: 1024px) {
+
+    body {
+      
+    overflow-x: hidden;    
+    }
+    
+
+    #oll {
+        display: none;
+    }
+    .control {
+        padding: 0 2rem;
+    
+    }
+    
+
+    #oo {
+        display: block;
+    }
+    
+    
+    main {
+       
+    }
+    .headerContainer {
+        background-color: #1c181d; 
+        display: flex;
+        /* padding: 1rem 5rem; */
+        /* justify-content: space-between */
+        
+       ;
+    }
+    
+    .headerContainer a {
+        display: block;
+    }
+    
+    
+    
+    
+    .logodesk {
+        display: block;
+        cursor: pointer;
+    }
+    .logo-con{
+        width: 60%;
+    }
+    
+    .logo {
+        display: none;
+    }
+    .inputContainer{
+        /* margin: 0 12rem; */
+        padding-right: 10rem;
+    }
+    input {
+        width: 80%;
+       
+    }
+    .profileContainer {
+        width: 30%;
+     
+        /* display: flex; */
+    }
+    
+    .profile {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.2);
+       
+       
+        width: 69%;
+        height: 2.5rem;
+         border-radius: 10px;
+         padding-left: .4rem;
+         
+        }
+    
+        .dv {
+            font-size: 11px;
+            padding-top: .2rem;
+        
+        color: white;
+        display: block;
+        margin-right: .08rem;
+        /* padding: .4rem; */
+    }
+    
+    .notify{
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    
+    }
+    
+    
+    
+    .modal {
+        
+       
+        
+        right: -20rem;
+        top: 6rem;
+        z-index: 100;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
+        transition: .6s ease-in;
+        opacity: 0;
+        visibility: hidden;
+      }
+    
+    #modal1.active {
+        top: 6rem;
+        right: 1rem;
+        
+        width: 30%;
+       
+      }
+    
+    #modal2.active {
+        top: 6rem;
+        right: 1rem;
+        width: 30%;
+       
+      }
+    
+    #modal2.active {
+        top: 6rem;
+        
+        width: 30%;
+       
+      }
+    
+    .ad-modal{
+        border-radius: 10px;
+    }
+    .adController {
+        display: flex;
+        justify-content: space-between;
+       
+    }
+    .adController  button {
+        /* color: whitesmoke; */
+        width: 20%;
+        padding: .6rem .2rem;
+        /* outline: none; */
+        border-radius: 8px;
+        margin-right: 4rem;
+        border-radius: 15px;
+    
+    }
+    
+    
+    .ad-closebtn  {
+        position: absolute;
+        /* background-color: red;  */
+        top: .9rem;
+        right: .7rem;
+    }
+    
+    .desc {
+        display: flex;
+        justify-content: space-between;
+      }
+    
+    .range progress {
+        display: block;
+        width: 50%;
+        padding: .7rem;
+       
+     }
+    
+     .btn2 {
+        display:  block;
+       }
+    
+     .itemsdrop p {
+       width: 70%;
+    
+       }
+     itemimg{
+        width: 400px;
+        height: 200px;
+        display: block;
+       }
+    
+    
+       .itemimgControl {
+        display: flex;
+        justify-content: space-between;
+       }
+    .Gbtn {
+        display: flex;
+    }
+    
+       img {
+        display: block;
+       }
+    
+    
+    }
+
+@media only screen and (min-width: 1200px) {
+
+body {
+  
+overflow-x: hidden;    
+}
+
+.control {
+    padding: 0 12rem;
+
+}
+
+
+
+main {
+   
+}
+.headerContainer {
+    background-color: #1c181d; 
+    display: flex;
+    /* padding: 1rem 5rem; */
+    /* justify-content: space-between */
+    
+   ;
+}
+
+.headerContainer a {
+    display: block;
+}
+
+
+
+
+.logodesk {
+    display: block;
+    cursor: pointer;
+}
+.logo-con{
+    width: 60%;
+}
+
+.logo {
+    display: none;
+}
+.inputContainer{
+    /* margin: 0 12rem; */
+    padding-right: 10rem;
+}
+input {
+    width: 80%;
+   
+}
+.profileContainer {
+    width: 30%;
+ 
+    /* display: flex; */
+}
+
+.profile {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+   
+   
+    width: 69%;
+    height: 2.5rem;
+     border-radius: 10px;
+     padding-left: .4rem;
+     
+    }
+
+    .dv {
+        font-size: 11px;
+        padding-top: .2rem;
+    
+    color: white;
+    display: block;
+    margin-right: .08rem;
+    /* padding: .4rem; */
+}
+
+.notify{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+}
+
+
+
+.modal {
+    
+   
+    
+    right: -20rem;
+    top: 6rem;
+    z-index: 100;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
+    transition: .6s ease-in;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+#modal1.active {
+    top: 6rem;
+    right: 1rem;
+    
+    width: 30%;
+   
+  }
+
+#modal2.active {
+    top: 6rem;
+    right: 1rem;
+    width: 30%;
+   
+  }
+
+#modal2.active {
+    top: 6rem;
+    
+    width: 30%;
+   
+  }
+
+.ad-modal{
+    border-radius: 10px;
+}
+.adController {
+    display: flex;
+    justify-content: space-between;
+   
+}
+.adController  button {
+    /* color: whitesmoke; */
+    width: 20%;
+    padding: .6rem .2rem;
+    /* outline: none; */
+    border-radius: 8px;
+    margin-right: 4rem;
+    border-radius: 15px;
+
+}
+
+
+.ad-closebtn  {
+    position: absolute;
+    /* background-color: red;  */
+    top: .9rem;
+    right: .7rem;
+}
+
+.desc {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.range progress {
+    display: block;
+    width: 50%;
+    padding: .7rem;
+   
+ }
+
+ .btn2 {
+    display:  block;
+   }
+
+ .itemsdrop p {
+   width: 70%;
+
+   }
+ itemimg{
+    width: 400px;
+    height: 200px;
+    display: block;
+   }
+
+
+   .itemimgControl {
+    display: flex;
+    justify-content: space-between;
+   }
+.Gbtn {
+    display: flex;
+}
+
+   img {
+    display: block;
+   }
+
+
 }
